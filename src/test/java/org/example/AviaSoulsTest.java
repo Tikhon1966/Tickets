@@ -52,6 +52,22 @@ public class AviaSoulsTest {
     }
 
     @Test
+    public void shouldSearchOneTicketSortPriceCompareTo() {
+
+        Ticket[] expected = {ticket5};
+        Ticket[] actual = tickets.search("A1", "C1");
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldSearchNotTicketSortPriceCompareTo() {
+
+        Ticket[] expected = {};
+        Ticket[] actual = tickets.search("A1", "D1");
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
     public void shouldSortFlyTimesComparator() {
 
         Arrays.sort(tickets.findAll(), ticketTimeComparator);
@@ -65,11 +81,30 @@ public class AviaSoulsTest {
     @Test
     public void shouldSearchSortFlyTimesComparator() {
 
-
         Ticket[] expected = {ticket1, ticket6, ticket4};
         Ticket[] actual = tickets.searchTime("A1", "B1");
         assertArrayEquals(expected, actual);
 
+    }
+
+    @Test
+    public void shouldSearchOneTicketSortFlyTimesComparator() {
+
+        Ticket[] expected = {ticket5};
+        Ticket[] actual = tickets.searchTime("A1", "C1");
+        assertArrayEquals(expected, actual);
 
     }
+
+    @Test
+    public void shouldSearchNotTicketSortFlyTimesComparator() {
+
+        Ticket[] expected = {};
+        Ticket[] actual = tickets.searchTime("A1", "D1");
+        assertArrayEquals(expected, actual);
+
+    }
+
+
 }
+
