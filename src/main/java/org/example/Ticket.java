@@ -3,10 +3,10 @@ package org.example;
 import java.util.Objects;
 
 public class Ticket implements Comparable<Ticket> {
-    private final String from; // аэропорт откуда
-    private final String to; // аэропорт куда
+    private  String from; // аэропорт откуда
+    private  String to; // аэропорт куда
     private int price; // цена
-    private final int timeFrom; // время вылета (по москве)
+    private  int timeFrom; // время вылета (по москве)
     private int timeTo; // время прилёта (по москве)
 
     public Ticket(String from, String to, int price, int timeFrom, int timeTo) {
